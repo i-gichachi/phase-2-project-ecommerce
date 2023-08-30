@@ -13,5 +13,11 @@ function Navigation({ cartCount, user, handleLogout }) {
               <FaHome />
             </Link>
           </li>
-          
+          <li className="navbar-link-item">
+          <Link to="/cart">
+            <FaShoppingCart />
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+          </Link>
+        </li>
+
 export default Navigation;  
