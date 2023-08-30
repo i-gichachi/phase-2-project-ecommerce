@@ -1,0 +1,25 @@
+/* Styling for the cart container */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+/* Styling for the cart header */
+.cart-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+  
+/* Styling for the empty cart message */
+.empty-cart {
+    text-align: center;
+}
+  
+/* Styling for each cart item */
+.cart-item {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
