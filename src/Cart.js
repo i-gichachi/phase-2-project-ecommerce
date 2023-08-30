@@ -9,4 +9,20 @@ function Cart({ cart, removeFromCart, user }) {
   useEffect(() => {
     updateTotalPrice()
   }, [cart, quantities])
+
+  const updateQuantity = (product, quantity) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [product.product_name]: quantity,
+    }))
+  }
+
+  const updateTotalPrice = () => {
+    let total = 0;
+    cart.forEach((product) => {
+      const quantity = quantities[product.product_name] || 1
+      total += product.unit_price * quantity
+    })
+    setTotalPrice(total)
+  }
 }
