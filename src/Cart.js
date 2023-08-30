@@ -54,3 +54,31 @@ function Cart({ cart, removeFromCart, user }) {
                       onChange={(e) => updateQuantity(product, parseInt(e.target.value))}
                     />
                   </div>
+                  <button onClick={() => removeFromCart(product)}>Remove from Cart</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="cart-total">
+            <p>Total Price: Ksh {totalPrice.toFixed(2)}</p>
+            {user ? (
+              <Link
+                to={{
+                  pathname: '/checkout',
+                  state: { quantities }, 
+                }}
+              >
+                <button>Checkout</button>
+              </Link>
+            ) : (
+              <p>Login to proceed to checkout.</p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default Cart;
+
