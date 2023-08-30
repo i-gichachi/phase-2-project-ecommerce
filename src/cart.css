@@ -1,0 +1,117 @@
+/* Styling for the cart container */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+/* Styling for the cart header */
+.cart-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+  
+/* Styling for the empty cart message */
+.empty-cart {
+    text-align: center;
+}
+  
+/* Styling for each cart item */
+.cart-item {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* Styling for cart item images */
+.cart-item img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+  
+/* Styling for cart item details */
+.cart-item-details {
+    flex: 1;
+}
+  
+/* Styling for cart item title */
+.cart-item-details h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5px;
+}
+  
+/* Styling for cart item description */
+.cart-item-details p {
+    margin: 0 0 10px;
+}
+  
+/* Styling for cart item price */
+.cart-item-details h4 {
+    font-size: 1rem;
+    margin: 0 0 5px;
+}
+  
+/* Styling for cart item ranking */
+.cart-item-details p {
+    margin: 0 0 5px;
+}
+
+/* Styling for quantity control */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+  
+/* Styling for quantity label */
+.quantity-control label {
+    margin-right: 10px;
+}
+  
+/* Styling for quantity input */
+.quantity-control input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+  
+/* Styling for remove from cart button */
+.cart-item-details button {
+    padding: 5px 10px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+/* Styling for remove from cart button on hover */
+.cart-item-details button:hover {
+    background-color: #d9534f;
+}
+
+/* Styling for cart total section */
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+  
+/* Styling for checkout button */
+.cart-total button {
+    padding: 10px 20px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+  /* Styling for checkout button on hover */
+.cart-total button:hover {
+    background-color: #c0392b;
+}
