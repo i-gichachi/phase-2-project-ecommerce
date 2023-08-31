@@ -105,4 +105,60 @@ function Checkout({ cart, user, quantities, clearCart }) {
   if (!user) {
     return <div className="checkout-container">You must be logged in to proceed with checkout.</div>
   }
+
+  return (
+    <div className="checkout-container">
+      <h2>Checkout</h2>
+      <form className="delivery-form">
+      <label htmlFor="county" className="form-label">Select Delivery County:</label>
+        <select
+          id="county"
+          className="form-input"
+          value={selectedCounty}
+          onChange={(event) => setSelectedCounty(event.target.value)}
+        >
+          <option value="">Select County</option>
+          {countiesList.map((county) => (
+            <option key={county} value={county}>
+              {county}
+            </option>
+          ))}
+        </select>
+      </form>
+      <div className="payment-methods">
+        <p className="payment-label">Select Payment Method:</p>
+        <label className="payment-option">
+          <input
+            type="radio"
+            value="cash"
+            checked={selectedPaymentMethod === "cash"}
+            onChange={() => setSelectedPaymentMethod("cash")}
+          />
+          Cash on Delivery
+        </label>
+        <label className="payment-option">
+          <input
+            type="radio"
+            value="bank"
+            checked={selectedPaymentMethod === "bank"}
+            onChange={() => setSelectedPaymentMethod("bank")}
+          />
+          Bank Transfer
+        </label>
+      </div>
+      <button className="show-receipt-button" onClick={handleReceipt}>
+        Show Receipt
+      </button>
+      {showReceipt && ( 
+        <div className="receipt-container">
+          {generateOrderReceipt()}
+          <button className="confirm-receipt-button" onClick={handleConfirmReceipt}>
+            OK
+          </button>
+        </div>
+      )}
+    </div>
+  )
 }
+
+export default Checkout;
