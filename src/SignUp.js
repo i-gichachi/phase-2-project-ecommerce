@@ -1,33 +1,40 @@
 import React, { useState } from 'react';
+import './SignUp.css'; //Import the custom CSS file for styling
 
 function SignUp() {
+  //States to hold form data
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
     email: "",
     password: "",
     confirm_password: "",
-    agreedToTerms: false,
+    agreedToTerms: false, //Initializes the checkbox state
   })
 
+  //Event handler for input changes
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
     const newValue = type === "checkbox" ? checked : value
 
+    //Updates form data state
     setFormData((prevData) => ({
       ...prevData,
       [name]: newValue,
     }))
   }
 
+  //Event handler for form submission
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    //Checks if user agreed to terms and conditions
     if (!formData.agreedToTerms) {
       alert("Please check the terms and conditions.")
       return
     }
 
+    //Checks if passwords match
     if (formData.password !== formData.confirm_password) {
       alert("Passwords do not match. Please retry again")
       return;
@@ -42,9 +49,11 @@ function SignUp() {
   })
     .then((response) => {
       if (response.ok) {
+        //Registration successful
         alert("Registration successful. You can now sign in.")
-        window.location.href = '/signin'
+        window.location.href = '/signin' // Navigates to sign-in page
       } else {
+        //Registration failed, handle errors here
         alert("Registration failed! Please try again")
       }
     })
@@ -53,10 +62,13 @@ function SignUp() {
     })
 }
 
+  //Renders the sign-up form
   return (
     <div className="signUp-container">
       <h2>Register</h2>
       <form className="signUp-form" onSubmit={handleSubmit}>
+        {/* Inputs fields for first name, last name, email, password, and confirm password */}
+        {/* Each input field is associated with the corresponding state */}
         <div>
           <label htmlFor="first_name">First Name:</label>
           <input
@@ -112,6 +124,7 @@ function SignUp() {
             required
           />
         </div>
+        {/* Checkbox for agreeing to terms and conditions */}
         <div className="checkbox-container">
           <input
             type="checkbox"
@@ -121,11 +134,14 @@ function SignUp() {
           />
           <label className="checkbox-label">I agree to the terms and conditions</label>
         </div>
+        {/* Button to submit the form */}
         <div>
           <button type="submit">Register</button>
         </div>
       </form>
     </div>
   )
-};
+}
+
+// Export the component
 export default SignUp;
