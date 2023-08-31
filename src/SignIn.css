@@ -1,31 +1,36 @@
+/* Styles for the sign-in container */
 .signIn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
-  
-  .signIn-form {
+}
+
+/* Styles for the sign-in form */
+.signIn-form {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 30px;
     width: 350px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signIn-form h2 {
+}
+
+/* Heading within the sign-in form */
+.signIn-form h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
-  }
+}
 
-  .signIn-form label {
+/* Label styles for form inputs */
+.signIn-form label {
     font-size: 1rem;
     color: #333;
-  }
-  
-  .signIn-form input {
+}
+
+/* Styles for input fields within the form */
+.signIn-form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -33,9 +38,10 @@
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     color: #333;
-  }
-  
-  .signIn-form button {
+}
+
+/* Button styles for form submission */
+.signIn-form button {
     background-color: #e74c3c;
     color: #fff;
     border: none;
@@ -43,31 +49,34 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .signIn-form button:hover {
+}
+
+/* Hover effect for the form submit button */
+.signIn-form button:hover {
     background-color: #c0392b;
-  }
-  .signIn-form p {
+}
+
+/* Paragraph styles within the form */
+.signIn-form p {
     margin-top: 10px;
     font-size: 0.9rem;
     color: #333;
-  }
-  
-  .signIn-form a {
+}
+
+/* Link styles within the form */
+.signIn-form a {
     color: #e74c3c;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  
-  .signIn-form a:hover {
+}
+
+/* Hover effect for links within the form */
+.signIn-form a:hover {
     color: #c0392b;
-  }
-  
-  /* SignIn.css */
-  /* ... Your existing styles ... */
-  
-  .register-button {
+}
+
+/* Additional styles specific to SignIn.css */
+.register-button {
     background-color: #e74c3c;
     color: #fff;
     border: none;
@@ -77,8 +86,9 @@
     transition: background-color 0.3s;
     text-decoration: none;
     font-size: 1rem;
-  }
-  
-  .register-button:hover {
-    background-color: #c0392b;
-  }  
+}
+
+/* Hover effect for the registration button */
+.register-button:hover {
+    background-color: #c0392b;
+}
