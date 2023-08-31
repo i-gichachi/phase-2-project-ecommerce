@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Checkout.css'; //Import your custom CSS for styling
 
 function Checkout({ cart, user, quantities, clearCart }) {
   //List of counties for delivery
