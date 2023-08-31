@@ -34,4 +34,40 @@
   .navbar-link-item a:hover {
     color: #e74c3c;
   }
+  .cart-badge {
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
   
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .user-info span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  
+  .navbar-link-item button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-link-item button:hover {
+    background-color: #c0392b;
+  }  
