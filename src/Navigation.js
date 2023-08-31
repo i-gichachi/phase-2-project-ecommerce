@@ -32,6 +32,14 @@ function Navigation({ cartCount, user, handleLogout }) {
               <FaUser className="user-icon" /> {/* Display user icon */}
               <button onClick={handleLogout}>Logout</button>
             </div>
+              ) : (
+                <Link to="/signin">Login</Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+      );
+    }
+    
+    export default Navigation;
 
-
-export default Navigation;  
