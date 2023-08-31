@@ -36,4 +36,4 @@ function ProductDetail({ products, addToCart }) {
   )
 }
 
-export default ProductDetail;
+ default ProductDetail;
