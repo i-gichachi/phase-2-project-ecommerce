@@ -41,4 +41,7 @@ function ProductList({ products, cart, addToCart, removeFromCart, navigate }) {
         ))}
       </ul>
     </div>
+     )
+    }
+
 export default ProductList;
