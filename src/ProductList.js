@@ -19,3 +19,4 @@ function ProductList({ products, cart, addToCart, removeFromCart, navigate }) {
               ))}
             </Carousel>
           </div>
+export default ProductList;
