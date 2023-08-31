@@ -2,86 +2,86 @@
 .product-list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create responsive grid columns */
+    gap: 20px; /* Add gap between grid items */
   }
   
   /* Styling for each product card */
   .product-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    border: 1px solid #ddd; /* Add a border around each card */
+    padding: 20px; /* Add padding inside the card */
+    display: flex; 
+    flex-direction: column; /* Stack elements vertically */
   }
   
   /* Styling for product card's title */
   .product-card h3 {
-    font-size: 1.2rem;
-    margin: 0 0 10px;
+    font-size: 1.2rem; /* Set font size for the title */
+    margin: 0 0 10px; /* Add margin below the title */
   }
   
   /* Styling for product card's subtitle */
   .product-card h4 {
-    font-size: 1rem;
-    margin: 0 0 10px;
+    font-size: 1rem; /* Set font size for the subtitle */
+    margin: 0 0 10px; /* Add margin below the subtitle */
   }
   
   /* Styling for product card's image */
   .product-card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    width: 100%; /* Make the image fill its container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add margin below the image */
   }
   
   /* Styling for product card's description */
-  .product-card p {
-    margin: 0 0 10px;
+  .product-card p { 
+    margin: 0 0 10px; /* Add margin below the description */
   }
 
  /* Styling for the "Add to Cart" button */
 .product-card button {
-    padding: 8px 12px;
-    margin-top: 8px;
-    border: none;
-    background-color: #c0392b;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 8px 12px; /* Add padding to the button */
+    margin-top: 8px; /* Add margin above the button */
+    border: none; /* Remove button border */
+    background-color: #c0392b; /* Set background color */
+    color: white; /* Set font color to white */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add transition effect for background color change */
   }
   
   /* Styling for the "Add to Cart" button on hover */
   .product-card button:hover {
-    background-color: #c0392b;
+    background-color: #c0392b;  /* Change background color on hover */
   }
   
   /* Styling for the product list carousel container */
   .product-list-carousel {
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    height: 200px;
+    display: flex; /* Use flexbox for layout */
+    overflow: hidden; /* Hide overflowing content */
+    justify-content: center; /* Center carousel contents horizontally */
+    height: 200px; /* Set carousel height */
   }
   
   /* Styling for each product thumbnail in the carousel */
   .product-thumbnail {
-    margin: 0 10px;
-    animation: slide 30s infinite linear;
+    margin: 0 10px; /* Add margin around each thumbnail */
+    animation: slide 30s infinite linear; /* Apply the slide animation */
   }
   
   /* Keyframes animation to slide the product thumbnails */
   @keyframes slide {
     0% {
-      transform: translateX(0);
+      transform: translateX(0); /* Starting position */
     }
     100% {
-      transform: translateX(calc(-100% * 2)); 
+      transform: translateX(calc(-100% * 2)); /* Ending position */
     }
   }
   
   /* Styling for images within product thumbnails */
   .product-thumbnail img {
-    max-width: 100%;
-    height: auto;
-    max-height: 150px;
-    object-fit: contain;
+    max-width: 100%; /* Set maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Set maximum height for the image */
+    object-fit: contain; /* Maintain aspect ratio and fit within the container */
   }
