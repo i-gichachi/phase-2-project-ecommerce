@@ -19,3 +19,29 @@ function ProductList({ products, cart, addToCart, removeFromCart, navigate }) {
               ))}
             </Carousel>
           </div>
+                {/* Lists of all products */}
+      <ul className="product-list">
+        {products.map(product => (
+          <li key={product.product_name} className="product-card">
+            <h3>{product.product_name}</h3>
+            <h4>Price: Ksh {product.unit_price}</h4>
+            <img src={product.product_thumbnail} alt={`${product.product_name} Thumbnail`} />
+            <p>Ranking: {product.ranking}</p>
+            {/* Button to navigate to product details page */}
+            <button onClick={() => navigate(`/products/${encodeURIComponent(product.product_name)}`)}>
+              View Details
+            </button>
+            {/* Conditional button based on cart status */}
+            {cart.some(item => item.product_name === product.product_name) ? (
+              <button onClick={() => removeFromCart(product)}>Remove from Cart</button>
+            ) : (
+              <button onClick={() => addToCart(product)}>Add to Cart</button>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+     )
+    }
+
+export default ProductList;
