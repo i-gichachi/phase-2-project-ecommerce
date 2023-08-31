@@ -1,0 +1,40 @@
+/* Styling for the product list */
+.product-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Styling for each product card */
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling for product card's title */
+  .product-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+  }
+  
+  /* Styling for product card's subtitle */
+  .product-card h4 {
+    font-size: 1rem;
+    margin: 0 0 10px;
+  }
+  
+  /* Styling for product card's image */
+  .product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for product card's description */
+  .product-card p {
+    margin: 0 0 10px;
+  }
+  
