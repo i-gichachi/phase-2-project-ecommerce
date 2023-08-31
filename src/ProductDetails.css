@@ -1,61 +1,71 @@
-/* ProductDetail.css */
+/* This CSS file defines styles for the product detail section */
+
+/* Styling for the overall product detail container */
 .product-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .product-detail h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .product-detail p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #555;
-  }
-  
-  .product-detail .price {
-    font-weight: bold;
-    color: #e74c3c;
-  }
-  
-  .product-detail img {
-    max-width: 100%;
-    max-height: 250px; /* Adjust this value as needed */
-    object-fit: contain;
-    border-radius: 5px;
-    transition: transform 0.3s;
-  }
-  
-  .product-detail img:hover {
-    transform: scale(1.05);
-  }
-  
-  .product-detail .ranking {
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 10px;
-  }
-  
-  .product-detail button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-    font-size: 1rem;
-  }
-  
-  .product-detail button:hover {
-    background-color: #c0392b;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adding a subtle box shadow for depth */
+}
+
+/* Styling for the product title */
+.product-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333; /* Dark gray text color for the title */
+}
+
+/* Styling for the product description */
+.product-detail p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555; /* Gray text color for the description */
+}
+
+/* Styling for the product price */
+.product-detail .price {
+  font-weight: bold;
+  color: #e74c3c; /* Red text color for emphasis on price */
+}
+
+/* Styling for the product image */
+.product-detail img {
+  max-width: 100%;
+  max-height: 250px; /* Adjust this value as needed */
+  object-fit: contain;
+  border-radius: 5px;
+  transition: transform 0.3s; /* Adding a smooth transition for image scaling */
+}
+
+/* Adding a hover effect to enlarge the image slightly */
+.product-detail img:hover {
+  transform: scale(1.05);
+}
+
+/* Styling for the product ranking/rating */
+.product-detail .ranking {
+  font-size: 0.9rem;
+  color: #777; /* Light gray text color for ranking */
+  margin-top: 10px;
+}
+
+/* Styling for the "Add to Cart" button */
+.product-detail button {
+  background-color: #e74c3c; /* Red background color for the button */
+  color: #fff; /* White text color for the button */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adding a smooth transition for background color change */
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+/* Adding a hover effect to darken the button color slightly */
+.product-detail button:hover {
+  background-color: #c0392b;
+}
