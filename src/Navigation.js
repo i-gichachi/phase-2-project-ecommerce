@@ -19,5 +19,19 @@ function Navigation({ cartCount, user, handleLogout }) {
             {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </Link>
         </li>
+        <li className="navbar-link-item">
+          <Link to="/cart">
+            <FaShoppingCart />
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+          </Link>
+        </li>
+        <li className="navbar-link-item">
+          {user ? (
+            <div className="user-info">
+              <span>Welcome {user.first_name}!</span>
+              <FaUser className="user-icon" /> {/* Display user icon */}
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+
 
 export default Navigation;  
