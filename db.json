@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "first_name": "K",
+        "last_name": "M",
+        "email": "km@gmail.com",
+        "password": "123456",
+        "confirm_password": "123456",
+        "agreedToTerms": true,
+        "id": 2
+      },
+      {
+        "first_name": "Yakuza",
+        "last_name": "Jnr",
+        "email": "j@gmail.com",
+        "password": "1234",
+        "confirm_password": "1234",
+        "agreedToTerms": true,
+        "id": 3
+      }
+    ],
+    "login": [
+      {
+        "email": "km@gmail.com",
+        "password": "123456",
+        "id": 1
+      }
+    ]
+  }
