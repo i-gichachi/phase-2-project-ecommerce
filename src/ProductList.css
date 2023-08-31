@@ -37,4 +37,51 @@
   .product-card p {
     margin: 0 0 10px;
   }
+
+ /* Styling for the "Add to Cart" button */
+.product-card button {
+    padding: 8px 12px;
+    margin-top: 8px;
+    border: none;
+    background-color: #c0392b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
+  /* Styling for the "Add to Cart" button on hover */
+  .product-card button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Styling for the product list carousel container */
+  .product-list-carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    height: 200px;
+  }
+  
+  /* Styling for each product thumbnail in the carousel */
+  .product-thumbnail {
+    margin: 0 10px;
+    animation: slide 30s infinite linear;
+  }
+  
+  /* Keyframes animation to slide the product thumbnails */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% * 2)); 
+    }
+  }
+  
+  /* Styling for images within product thumbnails */
+  .product-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+  }
