@@ -1,18 +1,20 @@
-# E-Commerce Web Application
+# Maukani E-Commerce Web Application
 
 ## Description
 This is a web application for managing an e-commerce store. Users can browse a collection of products, add products to their shopping cart, proceed to checkout, and manage their user accounts.
 
 ## Requirements and Specifications
 To run this project, you need the following:
-* Node.js (v14.0.0 or higher)
-* npm (v6.0.0 or higher)
-* An internet connection to fetch product data from the API
+1. Node.js (v14.0.0 or higher)
+2. npm (v6.0.0 or higher)
+3. An internet connection to fetch product data from the API
+4. Npm install the following `npm install react-router-dom`, `npm install react-responsive-carousel(slideshow)`, `npm install react-icons(icons we used in the navigation.js)`
+
 
 ## Setup Instructions
 1. Clone the repository: `git clone <git@github.com:i-gichachi/phase-2-project-ecommerce.git>`
 2. Navigate to the project directory: `cd <phase-2-project-ecommerce>`
-3. Install dependencies: `npm install`, `npm install react-responsive-carousel(for the slideshow)`, `npm install react-icons(used for icons in the navigation.js)`
+3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. You can access the app on `http://localhost:3000`
 
