@@ -1,62 +1,55 @@
-import React, { useState, useEffect } from 'react';
+// SignIn.js
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './SignIn.css'; // Import your CSS file
-import { retrieveUserData, storeUserData } from './DataStorage'; // Import data storage functions
+import './SignIn.css';
 
 function SignIn({ handleLogin }) {
-  const navigate = useNavigate(); // Initialize navigation hook
+  const navigate = useNavigate();
 
-  // State for form data
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
-  // State for user data retrieved from local storage or defaulting to empty array
-  const [usersData, setUsersData] = useState(retrieveUserData().users || []);
-  const [loginData, setLoginData] = useState(retrieveUserData().login || []);
-  
-  // State to track the currently logged-in user
   const [user, setUser] = useState(null);
 
-  // Function to handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  };
+  }
 
-  // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Find the user with matching email and password
-    const foundUser = usersData.find(
-      (user) => user.email === formData.email && user.password === formData.password
-    );
+    fetch("https://madukani-server.onrender.com/users")  
+      .then((response) => response.json())
+      .then((usersData) => {
+        const user = usersData.find(
+          (user) => user.email === formData.email && user.password === formData.password
+        );
 
-    if (foundUser) {
-      setUser(foundUser); // Set the logged-in user
-      handleLogin(foundUser); // Call the provided login handler
-      navigate('/'); // Navigate to the home page
-      alert('Login successful');
-    } else {
-      alert('Lmao wrong email or password. Please try again.');
-    }
+        if (user) {
+          setUser(user); 
+          handleLogin(user); 
+          navigate("/");
+          alert("Login successful");
+        } else {
+          alert("Lmao wrong email or password. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.log("Error logging in:", error);
+        alert("Error logging in. Please try again.");
+      });
   };
-
-  // Effect to update local storage whenever user or login data changes
-  useEffect(() => {
-    storeUserData({ users: usersData, login: loginData });
-  }, [usersData, loginData]);
 
   return (
     <div className="signIn-container">
       <h2>Login</h2>
       <form className="signIn-form" onSubmit={handleSubmit}>
-        {/* Email input */}
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -68,7 +61,6 @@ function SignIn({ handleLogin }) {
             required
           />
         </div>
-        {/* Password input */}
         <div>
           <label htmlFor="password">Password:</label>
           <input
@@ -80,7 +72,6 @@ function SignIn({ handleLogin }) {
             required
           />
         </div>
-        {/* Submit button */}
         <div>
           <button type="submit">Login</button>
         </div>
@@ -89,16 +80,16 @@ function SignIn({ handleLogin }) {
       {/* Display user data if logged in */}
       {user && (
         <div className="user-data">
-          <h3>Welcome, {user.first_name}!</h3>
+          <h3>Welcome, {user.name}!</h3>
           <p>Email: {user.email}</p>
           {/* Display other user data as needed */}
         </div>
       )}
       
-      {/* Link to signup page */}
       <p>Don't have an account? <Link to="/signup"><button className="register-button">Register here</button></Link></p>
     </div>
   );
 }
 
 export default SignIn;
+

@@ -1,59 +1,68 @@
-// SignUp.js
 import React, { useState } from 'react';
-import './SignUp.css'; // Import the custom CSS file for styling
-import { storeUserData } from './DataStorage'; // Import the data storage function
+import './SignUp.css'; //Import the custom CSS file for styling
 
 function SignUp() {
-  // States to hold form data
+  //States to hold form data
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    confirm_password: '',
-    agreedToTerms: false, // Initializes the checkbox state
-  });
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+    agreedToTerms: false, //Initializes the checkbox state
+  })
 
-  // Event handler for input changes
+  //Event handler for input changes
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    const newValue = type === 'checkbox' ? checked : value;
+    const { name, value, type, checked } = event.target
+    const newValue = type === "checkbox" ? checked : value
 
-    // Updates form data state
+    //Updates form data state
     setFormData((prevData) => ({
       ...prevData,
       [name]: newValue,
-    }));
-  };
+    }))
+  }
 
-  // Event handler for form submission
+  //Event handler for form submission
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    // Checks if user agreed to terms and conditions
+    //Checks if user agreed to terms and conditions
     if (!formData.agreedToTerms) {
-      alert('Please check the terms and conditions.');
-      return;
+      alert("Please check the terms and conditions.")
+      return
     }
 
-    // Checks if passwords match
+    //Checks if passwords match
     if (formData.password !== formData.confirm_password) {
-      alert('Passwords do not match. Please retry again.');
+      alert("Passwords do not match. Please retry again")
       return;
     }
 
-    // Store the user data in local storage
-    const existingUsers = storeUserData(formData);
+    fetch("https://madukani-server.onrender.com/users", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        //Registration successful
+        alert("Registration successful. You can now sign in.")
+        window.location.href = '/signin' // Navigates to sign-in page
+      } else {
+        //Registration failed, handle errors here
+        alert("Registration failed! Please try again")
+      }
+    })
+    .catch((error) => {
+      console.error("Error registering user:", error)
+    })
+}
 
-    if (existingUsers) {
-      alert('Registration successful. You can now sign in.');
-      window.location.href = '/signin'; // Navigates to sign-in page
-    } else {
-      alert('Registration failed! Please try again.');
-    }
-  };
-
-  // Renders the sign-up form
+  //Renders the sign-up form
   return (
     <div className="signUp-container">
       <h2>Register</h2>
@@ -125,13 +134,13 @@ function SignUp() {
           />
           <label className="checkbox-label">I agree to the terms and conditions</label>
         </div>
+        {/* Button to submit the form */}
         <div>
-          {/* Button to submit the form */}
           <button type="submit">Register</button>
         </div>
       </form>
     </div>
-  );
+  )
 }
 
 // Export the component
