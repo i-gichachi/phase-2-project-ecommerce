@@ -1,4 +1,4 @@
-# Maukani E-Commerce Web Application
+# Madukani E-Commerce Web Application
 
 ## Description
 This is a web application for managing an e-commerce store. Users can browse a collection of products, add products to their shopping cart, proceed to checkout, and manage their user accounts.
